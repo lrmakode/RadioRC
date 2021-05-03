@@ -2,6 +2,8 @@
 
 Currently tested with ArudionUNO and FlySky-i6 Remote control. 
 
+Pinchange Intrupts on arduino are Avilable for Pin 8 to Pin 13
+
 How to Use:
 
 Connect Roll     Channel to Pin connected to Digital PIN-8  of Arduino
