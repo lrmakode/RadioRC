@@ -2,7 +2,7 @@
 
 Currently tested with ArudionUNO and FlySky-i6 Remote control. 
 
-How to Uses:
+How to Use:
 
 Connect Roll     Channel to Pin connected to Digital PIN-8  of Arduino
 Connect Pitch    Channel to Pin connected to Digital PIN-9  of Arduino
