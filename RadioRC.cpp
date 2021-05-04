@@ -94,53 +94,10 @@ int RadioRC::Initialize(unsigned int pRollPin,
     Serial.println(gYawByte, BIN);
     
     PCICR |= (1 << PCIE0);    // set PCIE0 to enable PCMSK0 scan
-    if ( pRollPin == 8 
-        || pPitchPin == 8
-        || pThrottlePin == 8
-        || pYawPin == 8 ) 
-    {
-        PCMSK0 |= (1 << PCINT0);  // set PCINT0 (digital input 8) to trigger an interrupt on state change
-    }
-
-    if ( pRollPin == 9 
-        || pPitchPin == 9
-        || pThrottlePin == 9
-        || pYawPin == 9 ) 
-    {
-        PCMSK0 |= (1 << PCINT1);  // set PCINT1 (digital input 9)to trigger an interrupt on state change
-    }
-
-    if ( pRollPin == 10
-        || pPitchPin == 10
-        || pThrottlePin == 10
-        || pYawPin == 10 ) 
-    {
-        PCMSK0 |= (1 << PCINT2);  // set PCINT2 (digital input 10)to trigger an interrupt on state change
-    }
-
-    if ( pRollPin == 11 
-        || pPitchPin == 11
-        || pThrottlePin == 11
-        || pYawPin == 11 ) 
-    {
-        PCMSK0 |= (1 << PCINT3);  // set PCINT3 (digital input 11)to trigger an interrupt on state change
-    }
-
-    if ( pRollPin == 12 
-        || pPitchPin == 12
-        || pThrottlePin == 12
-        || pYawPin == 12 ) 
-    {
-        PCMSK0 |= (1 << PCINT4);  // set PCINT4 (digital input 12)to trigger an interrupt on state change
-    }
-
-    if ( pRollPin == 13 
-        || pPitchPin == 13
-        || pThrottlePin == 13
-        || pYawPin == 13 ) 
-    {
-        PCMSK0 |= (1 << PCINT5);  // set PCINT5 (digital input 13)to trigger an interrupt on state change
-    }
+    PCMSK0 |= (1 << pRollPin - 8);  // set PCINT0 (digital input 8) to trigger an interrupt on state change
+    PCMSK0 |= (1 << pPitchPin - 8);  // set PCINT0 (digital input 8) to trigger an interrupt on state change
+    PCMSK0 |= (1 << pThrottlePin - 8);  // set PCINT0 (digital input 8) to trigger an interrupt on state change
+    PCMSK0 |= (1 << pYawPin - 8);  // set PCINT0 (digital input 8) to trigger an interrupt on state change
     return 0;
 }
 
