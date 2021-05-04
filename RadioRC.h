@@ -8,6 +8,11 @@
  * @brief PIN10 must be connected to Throttle Channel
  * @Return If failed return -1 on Sucess Returns 0
  */
+
+#define MAX_VAL 2000
+#define MIN_VAL 1000
+#define CENTER_VAL 1500
+
 class RadioRC
 {
     public:

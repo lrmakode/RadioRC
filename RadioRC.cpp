@@ -26,6 +26,10 @@ ISR(PCINT0_vect)
     else if( ch1_state )
     {   
         RadioRC::mRoll = mCurrentTime - mRollClock;
+        if( RadioRC::mRoll < MIN_VAL) 
+            RadioRC::mRoll = MIN_VAL;
+        if( RadioRC::mRoll > MAX_VAL)
+            RadioRC::mRoll = MAX_VAL;
         ch1_state = false;
     }
 
@@ -40,6 +44,10 @@ ISR(PCINT0_vect)
     else if( ch2_state )
     {   
         RadioRC::mPitch = mCurrentTime - mPitchClock;
+        if(RadioRC::mPitch< MIN_VAL) 
+            RadioRC::mPitch= MIN_VAL;
+        if(RadioRC::mPitch > MAX_VAL)
+            RadioRC::mPitch = MAX_VAL;
         ch2_state = false;
     }
 
@@ -54,6 +62,10 @@ ISR(PCINT0_vect)
     else if( ch3_state  )
     {   
         RadioRC::mThrottle = mCurrentTime - mThrottleClock;
+        if(RadioRC::mThrottle< MIN_VAL) 
+            RadioRC::mThrottle= MIN_VAL;
+        if(RadioRC::mThrottle > MAX_VAL)
+            RadioRC::mThrottle = MAX_VAL;
         ch3_state = false;
     }
 
@@ -68,6 +80,10 @@ ISR(PCINT0_vect)
     else if( ch4_state )
     {   
         RadioRC::mYaw = mCurrentTime - mYawClock;
+        if(RadioRC::mYaw < MIN_VAL) 
+            RadioRC::mYaw= MIN_VAL;
+        if(RadioRC::mYaw > MAX_VAL)
+            RadioRC::mYaw = MAX_VAL;
         ch4_state = false;
     }
 }
