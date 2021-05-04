@@ -12,8 +12,10 @@ class RadioRC
 {
     public:
         
-        static int Initialize();
-
+        static int Initialize(unsigned int pRollPin,
+                              unsigned int pPitchPin,
+                              unsigned int pThrottlePin,
+                              unsigned int pYawPin);
         /**
         * @brief 
         */
