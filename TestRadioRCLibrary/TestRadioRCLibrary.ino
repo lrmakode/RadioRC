@@ -5,7 +5,7 @@ void setup()
 {
    Serial.begin(57600);      //Start the serial connetion @ 57600bps
    delay(250);               //Give the gyro time to start 
-   gRC_Control.Initialize(8,9,10,11);
+   gRC_Control.Initialize(9,10,11,13);
 }
 void loop()
 {
